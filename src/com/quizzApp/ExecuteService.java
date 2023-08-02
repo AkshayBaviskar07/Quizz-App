@@ -1,8 +1,10 @@
 package com.quizzApp;
 
+import java.util.Scanner;
+
 public class ExecuteService {
 
-    public void printRules(){
+       public void printRules(){
         System.out.println("----------------------------------");
         System.out.println("----------------------------------");
         System.out.println("Point Details: ");

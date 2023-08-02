@@ -58,5 +58,4 @@ public class QuestionService {
         System.out.println(score);
         System.out.println("----------------------------------");
     }
-
 }
