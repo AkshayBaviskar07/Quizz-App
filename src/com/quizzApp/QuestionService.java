@@ -26,15 +26,16 @@ public class QuestionService {
         int i = 0;
 
         for (Questions que : questions) {
-            System.out.print("Q" + (i + 1) + ".");
+            System.out.print("Q.");
             System.out.println(que.getQuestion());
             System.out.println("   a." + que.getOpt1());
             System.out.println("   b." + que.getOpt2());
             System.out.println("   c." + que.getOpt3());
             System.out.println("   d." + que.getOpt4());
 
-            System.out.print("Answer: ");
+
             Scanner sc = new Scanner(System.in);
+            System.out.print("Answer: ");
             answer[i] = sc.next().trim();
             i++;
             System.out.println("---------------------------------");
