@@ -24,22 +24,26 @@ public class QuestionService {
 
     public void playQuizz() {
         int i = 0;
+        long startTime = System.currentTimeMillis();
+        long endTime = startTime + 5000;
 
         for (Questions que : questions) {
-            System.out.print("Q.");
-            System.out.println(que.getQuestion());
-            System.out.println("   a." + que.getOpt1());
-            System.out.println("   b." + que.getOpt2());
-            System.out.println("   c." + que.getOpt3());
-            System.out.println("   d." + que.getOpt4());
+              System.out.print("Q.");
+              System.out.println(que.getQuestion());
+              System.out.println("   a." + que.getOpt1());
+              System.out.println("   b." + que.getOpt2());
+              System.out.println("   c." + que.getOpt3());
+              System.out.println("   d." + que.getOpt4());
 
 
-            Scanner sc = new Scanner(System.in);
-            System.out.print("Answer: ");
-            answer[i] = sc.next().trim();
-            i++;
+
+              Scanner sc = new Scanner(System.in);
+              System.out.print("Answer: ");
+              answer[i] = sc.next().trim();
+              i++;
+          }
             System.out.println("---------------------------------");
-        }
+
     }
 
     public void printScore(){
