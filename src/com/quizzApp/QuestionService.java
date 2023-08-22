@@ -37,21 +37,36 @@ public class QuestionService {
 
     public void playQuiz() {
         int i = 0;
-
+        long endTime = 0;
        try{
            for (Questions que : questions) {
-
+                endTime = System.currentTimeMillis()+15000;
                System.out.print("Q"+(i+1+"."));
                System.out.println(que.getQuestion());
+               try {
+                   Thread.sleep(1000);
+               }catch(InterruptedException ie) {
+                   ie.getMessage();
+               }
                System.out.println("   a." + que.getOpt1());
                System.out.println("   b." + que.getOpt2());
                System.out.println("   c." + que.getOpt3());
                System.out.println("   d." + que.getOpt4());
+               try {
+                   Thread.sleep(2000);
+               }catch(InterruptedException ie) {
+                   ie.getMessage();
+               }
 
                Scanner sc = new Scanner(System.in);
                try{
                    System.out.println("Do you want to skip question (y/n)");
                    skipQue = sc.next();
+//
+//                   if(!skipQue.equalsIgnoreCase("y") || !skipQue.equalsIgnoreCase("n")){
+//                       System.out.println("Enter valid input.\nQuiz will start again..");
+//                       break;
+//                   }
 
                    if(skipQue.equalsIgnoreCase("y")){
                        score = 0;
@@ -62,13 +77,13 @@ public class QuestionService {
                        continue;
                    }
 
+                   System.out.print("Answer: ");
+                   answer[i] = sc.next().trim();
+                   i++;
+
                }catch(InputMismatchException ie){
                    System.out.println("Invalid input.");
                }
-
-               System.out.print("Answer: ");
-               answer[i] = sc.next().trim();
-               i++;
            }
            System.out.println("---------------------------------");
 

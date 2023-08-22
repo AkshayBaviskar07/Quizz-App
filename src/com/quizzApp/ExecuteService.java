@@ -15,7 +15,9 @@ public class ExecuteService {
     }
 
     public void playQuiz(){
+           boolean playAgain;
            try{
+               playAgain = false;
                Scanner sc = new Scanner(System.in);
 
                System.out.println("Enter User Name: ");
@@ -57,10 +59,14 @@ public class ExecuteService {
                       System.out.println("Do you want to play again (y/n)");
                       ans = sc.next();
 
-                      if (ans.equals("n")) {
+                      if (ans != null && ans.equalsIgnoreCase("y")) {
+                          playAgain = true;
+                      }
+                      if(playAgain == false){
                           System.out.println("Thanks for playing");
                       }
-                  }while(ans.equals("y"));
+
+                  }while(playAgain == true);
 
                }catch(InputMismatchException ie){
                    System.out.println("Invalid input type.");
